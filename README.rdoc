@@ -10,3 +10,23 @@ description: text
 - decription laten zine
 - decription moet tussen 20 en 500 charakters zijn
 - chef_id laten zien
+
+
+chefs:
+
+wat hebben we al:
+  - chef en validatie
+  - chef tabel met kolom: naam en email
+  
+  
+wat hebben we nodig?
+  - pass en authenticated loggin hebben we nodig
+  - email creditials
+  - niewwe chefs maken
+  - chef profiliel laten izne
+  - lijst van chefts
+  - log in en out
+  - create recipe en edit en like enkel voor chefs
+  
+   
+   

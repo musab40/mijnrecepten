@@ -5,7 +5,7 @@
     Dit is de home pagina.
   </h2>
   
-  <%= link_to "Registreer Nu!", "", class: "btn btn-lg btn-succes" %>
+  <%= link_to "Registreer Nu!", register_path, class: "btn btn-lg btn-succes" %>
 </div>
 <div class="row">
   <div class="col-lg-4">
@@ -17,10 +17,10 @@
   </div>
   <div class="col-lg-4">
     <h3 class="midrow">
-      Bekijk Recepten als Gast gebruiker.
+      Log in
     </h3>
-    <h2 class="left">Bekijk Recepten als Gast en Registreer later</h2>
-    <p><%= link_to "Bekijk Recepten", "", class: "btn btn-warning btn-small" %></p>
+    <h2 class="left">Voeg toe / wijzig uw recepten / reageer op recepten / vind-leuk / en meer..</h2>
+    <p><%= link_to "Log in", login_path, class: "btn btn-warning btn-small" %></p>
   </div>
   <div class="col-lg-4">
     <h3 class="midrow">
