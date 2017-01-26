@@ -1,12 +1,48 @@
 <header class="navbar navbar-fixed-top navbar-default">
     <div class="container">
-      <%= link_to "MijnRecepten", root_path, class: "btn btn-lg btn-succes", id: "logo" %>
-      <div class="nav_item">
-        <%= link_to "link 1", "", class: "btn btn-default btn-warning" %>
-      </div>
-      <div class="nav_item">
-        <%= link_to "link 1", "", class: "btn btn-default btn-warning" %>
-      </div>
+      
+        <%= link_to "MijnRecepten", root_path, class: "btn btn-lg btn-success", id: "logo" %>
+        <ul class="nav_ul_item">
+          <li class="dropdown">
+            <%= link_to '#', class: "btn btn-befault btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+              Stijlen <b class="caret"></b>
+            <% end %>
+            <ul class='dropdown-menu'>
+              <% Style.all.each do |style| %>
+                <li><%= link_to style.name, style_path(style) %></li>
+              <% end %>
+              <% if logged_in? %>
+                <li class='divider'></li>
+                <li>
+                  <%= link_to(new_style_path) do %>
+                    Nieuw Stijl
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav_ul_item">
+          <li class="dropdown">
+            <%= link_to '#', class: "btn btn-befault btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+              Ingredienten <b class="caret"></b>
+            <% end %>
+            <ul class='dropdown-menu'>
+              <% Ingredient.all.each do |ingredient| %>
+                <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+              <% end %>
+              <% if logged_in? %>
+                <li class='divider'></li>
+                <li>
+                  <%= link_to(new_ingredient_path) do %>
+                    Nieuw Ingredient
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      
       
       <% if logged_in? %>
       
