@@ -24,9 +24,13 @@
     <div class="col-lg-6 well">
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= recipe.summary %></p>
-      <p>Stijl: <%= render recipe.styles %></p>
-      <p>Ingredienten: <%= render recipe.ingredients %></p>
       
+      <% if recipe.styles.any? %>
+        <p>Stijl: <%= render recipe.styles %></p>
+      <% end %>
+      <% if recipe.ingredients.any? %>
+        <p>Ingredienten: <%= render recipe.ingredients %></p>
+      <% end %>
       <p>
         <span class='quiet'><small> Gemaakt <%= time_ago_in_words(recipe.created_at) %> geleden.</small></span>
         <span class='quiet'><small> Gewijzigd <%= time_ago_in_words(recipe.updated_at) %> geleden.</small></span>
